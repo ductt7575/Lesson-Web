@@ -28,66 +28,72 @@ a {
     text-decoration: none;
 }
 
+.btn {
+    display: inline-block;
+    min-width: 118px;
+    padding: 0 16px;
+    line-height: 50px;
+    color: #FFF;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 24.5px;
+    background: #171100;
+}
+
 /* ================================== Header ================================== */
 .header {
     background: #FFFCF4;
-    position: sticky;
-    top: -26px;
-    z-index: 1;
 }
 
-.body {
+.header.fixed {
+    position: sticky;
+    top: -28px;
+}
+
+.header .body {
     display: flex;
     align-items: center;
     padding: 36px 0 8px;
 }
 
-.header .nav {
-
+.nav {
     margin-left: auto;
 }
 
-.header .nav ul {
+.nav ul {
     display: flex;
 }
 
-.header .nav a {
-    padding: 0px 21px 10px;
+.nav a {
+    position: relative;
+    padding: 8px 21px;
     color: #5F5B53;
     font-size: 1.6rem;
-    font-weight: 400;
 }
 
-.header .nav a:hover {
+.nav a:hover,
+.nav li.active a {
+    text-shadow: 1px 0 0 currentColor;
     color: #171100;
-    font-weight: 600;
 }
 
-.header .active {
-    position: relative;
-}
-
-.header .active::after {
-    content: "";
-    display: inline-block;
+.nav li.active a::after {
     position: absolute;
+    left: 21px;
+    bottom: 6px;
+    content: "";
+    display: block;
     width: 12px;
     height: 2px;
-    border-radius: 1px;
     background: #171100;
-    bottom: 0;
-    left: 0;
+    border-radius: 1px;
 }
 
-.header .action-btn {
+.header .signup-btn {
     min-width: 144px;
-    padding: 11px 16px;
+}
+
+.header .action {
     margin-left: 49px;
-    border-radius: 24.5px;
-    background: #171100;
-    color: #FFF;
-    font-size: 1.6rem;
-    font-weight: 600;
-    line-height: 1.75;
-    text-align: center;
 }
