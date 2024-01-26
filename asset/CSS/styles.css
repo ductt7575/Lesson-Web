@@ -4,6 +4,7 @@
 
 :root {
     --primary-color: #FFB900;
+    --secondary-color: #171100;
     --font-heading: 'Sen', 'san-serif';
 }
 
@@ -43,11 +44,62 @@ a {
     font-weight: 600;
     text-align: center;
     border-radius: 999px;
-    background: #171100;
+    background: var(--secondary-color);
 }
 
 .btn:hover {
     opacity: 0.9;
+}
+
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp, 2);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.break-all {
+    word-break: break-word;
+}
+
+.heading {
+    color: var(--secondary-color);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.heading.lv1 {
+    font-size: 5.8rem;
+    line-height: 1.2;
+}
+
+.heading.lv2 {
+    font-size: 3.8rem;
+    line-height: 1.26;
+}
+
+.heading.lv3,
+.heading.lv3 a {
+    color: var(--secondary-color);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 1.67;
+}
+
+.desc {
+    color: #5F5B53;
+}
+
+.desc.main-desc {
+    font-size: 1.8rem;
+    line-height: 1.67;
+}
+
+.desc.sub-desc {
+    font-size: 1.4rem;
+    line-height: 1.86;
 }
 
 /* ================================== Header ================================== */
@@ -85,7 +137,7 @@ a {
 .nav a:hover,
 .nav li.active a {
     text-shadow: 1px 0 0 currentColor;
-    color: #171100;
+    color: var(--secondary-color);
 }
 
 .nav li.active a::after {
@@ -96,7 +148,7 @@ a {
     display: block;
     width: 12px;
     height: 2px;
-    background: #171100;
+    background: var(--secondary-color);
     border-radius: 1px;
 }
 
@@ -181,7 +233,7 @@ a {
 }
 
 .hero-summary .title {
-    color: #171100;
+    color: var(--secondary-color);
     font-size: 1.8rem;
     font-weight: 600;
     line-height: 1.67;
@@ -193,20 +245,8 @@ a {
     padding: 64px 0 0 130px;
 }
 
-.hero .heading {
-    color: #171100;
-    font-family: var(--font-heading);
-    font-size: 5.8rem;
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-}
-
-.hero .desc {
+.hero .content-block .desc {
     margin-top: 22px;
-    color: #5F5B53;
-    font-size: 1.8rem;
-    line-height: 1.67;
 }
 
 .hero .cta-group {
@@ -246,7 +286,7 @@ a {
 
 .hero .watch-video span {
     margin-left: 14px;
-    color: #171100;
+    color: var(--secondary-color);
     font-size: 1.8rem;
     font-weight: 600;
     line-height: 1.67;
@@ -262,5 +302,129 @@ a {
     font-size: 4.4rem;
     font-weight: 700;
     line-height: 1.23;
+    color: var(--secondary-color);
+}
+
+/* ================================== Popular courses ================================== */
+.popular {
+    padding: 200px 0;
+}
+
+.popular-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.popular-top .desc {
+    margin-top: 16px;
+    width: 458px;
+}
+
+.popular .sub-title {
+    color: var(--secondary-color);
+    font-family: var(--font-heading);
+    font-size: 3.8rem;
+    font-weight: 700;
+    line-height: 1.26;
+    letter-spacing: -0.02em;
+}
+
+.popular-top .controls {
+    display: flex;
+    gap: 18px;
+}
+
+.popular-top .control-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    width: 40px;
+    height: 40px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    background: transparent;
+}
+
+.popular-top .control-btn:hover {
+    color: #fff;
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* Course list */
+.popular .course-list {
+    display: flex;
+    gap: 30px;
+    margin-top: 55px;
+}
+
+.popular .course-item {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #E2DFDA;
+    border-radius: 12px;
+}
+
+.popular .course-item:hover {
+    box-shadow: 0px 18px 36px 0px rgba(0, 0, 0, 0.05);
+    border-color: transparent;
+}
+
+.popular .course-item .thumb {
+    width: calc(100% + 2px);
+    height: 278px;
+    margin: -1px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+.popular .course-item .info {
+    padding: 16px 22px 22px;
+}
+
+.popular .course-item .rating,
+.popular .course-item .foot,
+.popular .course-item .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.popular .rating .value {
+    margin-left: 6px;
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    line-height: 1.75;
+}
+
+.popular .course-item .heading a {
+    padding-right: 8px;
+}
+
+.popular .course-item .desc {
+    margin-top: 6px;
+    white-space: wrap;
+}
+
+.popular .course-item .foot {
+    margin-top: 12px;
+}
+
+.popular .course-item .price {
     color: #171100;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.67;
+}
+
+.popular .course-item .book-btn {
+    border: none;
+    font-size: 1.4rem;
+}
+
+.popular .course-item .book-btn:hover {
+    background: var(--primary-color);
+    cursor: pointer;
 }
